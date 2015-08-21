@@ -1,0 +1,4 @@
+results_local/*
+*.log
+myprogram
+*.dat

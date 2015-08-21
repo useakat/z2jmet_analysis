@@ -1,0 +1,63 @@
+ FF: ====================================================
+ FF:   FF 2.0, a package to evaluate one-loop integrals
+ FF: written by G. J. van Oldenborgh, NIKHEF-H, Amsterdam
+ FF: ====================================================
+ FF: for the algorithms used see preprint NIKHEF-H 89/17,
+ FF: New Algorithms for One-loop Integrals, by G.J. van
+ FF: Oldenborgh and J.A.M. Vermaseren, published in 
+ FF: Zeitschrift fuer Physik C46(1990)425.
+ FF: ====================================================
+ FF: ffini: precx = .177635683940025E-14
+ FF: ffini: precc = .177635683940025E-14
+ FF: ffini: xalogm = .100000000000000-299
+ FF: ffini: xclogm = .100000000000000-299
+LHAPDF 6.1.5 loading all 41 PDFs in set MSTW2008nlo68cl
+MSTW2008nlo68cl, version 2; 41 PDF members
+ HATHOR: Dear user,
+ HATHOR: please note that per default the exact NNLO results [1-4] are used
+ HATHOR: for the evaluation of the inclusive cross section
+ HATHOR: The weak corrections are based on [5-7]
+ HATHOR: For the numerical integration Hathor uses an adopted version 
+ HATHOR: of the Vegas integrator [8,9]. The required random numbers are 
+ HATHOR: generated using Ranlux [10]. The one-loop integrals are calculated
+ HATHOR: using the FF library. [11]
+ HATHOR: [1]  Baernreuther, Czakon, Mitov: Percent level precision physics at 
+ HATHOR:      the Tevatron: first genuine NNLO QCD corrections to 
+ HATHOR:      q qbar -> t tbar + X,  Phys.Rev.Lett. 109 (2012) 132001.
+ HATHOR: [2]  Czakon, Mitov: NNLO corrections to top-pair production at 
+ HATHOR:      hadron colliders: the all-fermionic scattering channels,
+ HATHOR:      JHEP 1212 (2012) 054
+ HATHOR: [3]  Czakon, Mitov: NNLO corrections to top pair production at
+ HATHOR:      hadron colliders: the quark-gluon reaction,
+ HATHOR:      JHEP 1301 (2013) 080
+ HATHOR: [4]  Czakon, Fiedler, Mitov: The total top quark pair production 
+ HATHOR:      cross-section at hadron colliders through O(alpha_S^4),
+ HATHOR:      Phys.Rev.Lett. 110 (2013) 25, 252004
+ HATHOR: [5]  K¨uhn, Scharf and Uwer: Electroweak corrections to
+ HATHOR:      top-quark pair production in quark-antiquark annihilation
+ HATHOR:      Eur. Phys. J. C 45 (2006) 139 [hep-ph/0508092].
+ HATHOR: [6]  K¨uhn, Scharf and Uwer: Electroweak effects in
+ HATHOR:      top-quark pair production at hadron colliders,
+ HATHOR:      Eur. Phys. J. C 51 (2007) 37 [hep-ph/0610335].
+ HATHOR: [7]  K¨uhn, Scharf and Uwer: Weak Interactions in
+ HATHOR:      Top-Quark Pair Production at Hadron Colliders: An Update,
+ HATHOR:      arXiv:1305.5773 [hep-ph].
+ HATHOR: [8]  Lepage:A New Algorithm for Adaptive Multidimensional Integration
+ HATHOR:      J.Comput.Phys.27 (1978) 192
+ HATHOR: [9] Lepage: VEGAS: AN ADAPTIVE MULTIDIMENSIONAL INTEGRATION PROGRAM
+ HATHOR:      CLNS-80/447 (1980).
+ HATHOR: [10] Luescher: A Portable high quality random number generator
+ HATHOR:      for lattice field theory simulations,
+ HATHOR:      Comput.Phys.Commun.79 (1994) 100 [hep-lat/930902]
+ HATHOR: [11] van Oldenborgh: FF: A Package to evaluate one loop
+ HATHOR:      Feynman diagrams, Comput.Phys.Commun 66 (1991) 1
+ HATHOR: 
+ HATHOR: Please cite the corresponding articles if you quote Hathor results
+ HATHOR: in your article relying on the aformentioned calculations.
+ HATHOR: Collider set to Proton-Proton
+ HATHOR: sqrt(shad) is set to [GeV]:  8000
+ HATHOR: Change if needed with setSqrtShad(newval)
+ HATHOR: Collider energy set to [GeV]:  8000
+ HATHOR: Precision set to  10000
+ HATHOR: Precision set to  1000
+0.0907746 0.0330825 3.60571e-06 0.00208161 -0.00193765 (pdf)
