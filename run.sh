@@ -3,9 +3,9 @@
 rm -rf s.dat
 touch s.dat
 ########### Parameters #########################################
-analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
+#analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 #analysis=cms_1502_06031 # 2lepton jets MET
-#analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
+analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
 #analysis=atlas_conf_2013_047 # 2-6 jets +MET
 #analysis=atlas_conf_2013_089 # 2leptons +MET no sensitivity
 #analysis=atlas_1403_4853 # 2lepton jets MET (Stop search) no sensitivity
@@ -14,11 +14,15 @@ analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 exp=atlas # This is not used yet (under construction)
 #exp=cms # This is not used yet (under construction)
 
-mg5dir=../MG5/pp_bpbp~_dzld~zv # for atlas_1503_03290, cms_1502_0631, atlas_1403_4853
+#mg5dir=../MG5/pp_bpbp~_dzld~zv # for atlas_1503_03290, cms_1502_0631, atlas_1403_4853
 #mg5dir=../MG5/pp_bpbp~_dzd~z # for atlas_1503_03290, cms_1502_0631
+mg5dir=../MG5/pp_bpbp~_uw-u~w+ # for atlas_1503_03290, cms_1502_0631
+
 mg5_mode=1 # 0:don't generate events, 1:generate events
 runext=10k
 nevents=10000
+
+
 
 MBmin=620
 MBmax=760
