@@ -17,15 +17,18 @@ exp=atlas # This is not used yet (under construction)
 #mg5dir=../MG5/pp_bpbp~_dzld~zv # for atlas_1503_03290, cms_1502_0631, atlas_1403_4853
 #mg5dir=../MG5/pp_bpbp~_dzd~z # for atlas_1503_03290, cms_1502_0631
 mg5dir=../MG5/pp_bpbp~_uw-u~w+ # for atlas_1503_03290, cms_1502_0631
+#mg5dir=../MG5/pp_bpbp~_dzu~w+ # for atlas_1503_03290, cms_1502_0631
 
-mg5_mode=1 # 0:don't generate events, 1:generate events
 runext=10k
+mg5_mode=1 # 0:don't generate events, 1:generate events
 nevents=10000
 
-
+#resultext=z
+resultext=w
+#resultext=zw
 
 MBmin=620
-MBmax=760
+MBmax=620
 dMB=20
 ################## Main Program ##################################
 i=1
@@ -60,7 +63,7 @@ while [ $MB -le $MBmax ];do
     if [ -e results_local/${analysis}_$MB ];then
 	rm -rf results_local/${analysis}_$MB
     fi
-    mv $CHECKMATE/results/output results_local/${analysis}_$MB
+    mv $CHECKMATE/results/output results_local/${analysis}_${MB}_$resultext
     MB=`expr $MB + $dMB`
     i=`expr $i + 1`
 done
