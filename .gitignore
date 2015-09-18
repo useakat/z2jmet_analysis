@@ -1,4 +1,6 @@
 results_local/*
+results_local_brz/*
+results_local_brz2/*
 *.log
 myprogram
 *.dat

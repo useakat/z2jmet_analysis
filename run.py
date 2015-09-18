@@ -31,6 +31,7 @@ else:
 
 # extract NLO cross section information from Hathor output
 #brz = 2*(0.03363+0.03366)*0.2
+#brz = 0.137 * 0.137
 brz = 1
 ld = open("hathor.log")
 lines = ld.readlines()
