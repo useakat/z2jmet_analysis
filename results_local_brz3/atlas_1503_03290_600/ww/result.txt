@@ -1,0 +1,6 @@
+
+Test: Calculation of r = signal/(95%CL limit on signal)
+Warning: Error is dominated by Monte Carlo statistics!
+Result: Allowed
+Result for r: r_max = 0.13750
+SR: atlas_1503_03290 - SR-Z

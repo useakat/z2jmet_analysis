@@ -19,13 +19,13 @@ mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
 mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
 mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
 
-mg5_mode=1 # 0:don't generate events, 1:generate events
+mg5_mode=0 # 0:don't generate events, 1:generate events
 runext=10k
 nevents=10000
 
 results_dir=results_local_brz3
 
-MBmin=500
+MBmin=600
 MBmax=$MBmin
 dMB=20
 

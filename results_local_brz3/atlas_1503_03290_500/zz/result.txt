@@ -1,0 +1,5 @@
+
+Test: Calculation of r = signal/(95%CL limit on signal)
+Result: Excluded
+Result for r: r_max = 97.43056
+SR: atlas_1503_03290 - SR-Z

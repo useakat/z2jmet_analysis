@@ -1,0 +1,3 @@
+
+SR    S        dS_stat  dS_sys  dS_tot  S95_obs  S95_exp  r^c_obs  r^c_exp  
+SR-Z  153.385  13.830   7.319   15.647  29.600   12.000   4.146    10.226   
