@@ -25,13 +25,12 @@ nevents=100000
 
 #results_dir=results_local
 results_dir=results_local_brz2
-#results_dir=results_local_brz_test
 
-MBmin=740
-MBmax=740
+MBmin=400
+MBmax=400
 dMB=20
 
-BRZ=1
+BRZ=0.01
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
@@ -43,6 +42,7 @@ while [ $MB -le $MBmax ];do
     run_name=m_${MB}_${BRZ}_${runext}
 
     BRW=`echo "scale=3; 1 -$BRZ" | bc | sed 's/^\./0./'`
+#    BRW=0
 
     cd $mg5dir
     sed	-e "s/.* = nevents !/$nevents = nevents !/" ./Cards/run_card.dat > ./Cards/run_card.tmp
