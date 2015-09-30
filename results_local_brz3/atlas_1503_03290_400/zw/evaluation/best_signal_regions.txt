@@ -1,0 +1,2 @@
+analysis          bestSR  r_obs^c  r_exp^c  S        dS_stat  dS_sys  dS_tot  S95_obs  S95_exp  
+atlas_1503_03290  SR-Z    16.235   40.046   598.791  54.891   25.031  60.329  29.600   12.000   
