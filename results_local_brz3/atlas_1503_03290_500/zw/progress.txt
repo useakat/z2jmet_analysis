@@ -1,2 +1,0 @@
-#Prefix  EventFile                                                                                        Sigma      dSigma        Process                     
-000      /Users/yoshi/projects/z2j/MG5/pp_bpbp~_dzuw_dllulv/Events/m_500_0.5_10k/tag_1_pythia_events.hep  0.6143 PB  0.0293106 PB  2015-09-30 19:28:56.120700  
