@@ -17,20 +17,23 @@ exp=atlas # This is not used yet (under construction)
 #mg5dir=../MG5/pp_bpbp~_uw-u~w+ # for atlas_1503_03290, cms_1502_0631
 #mg5dir=../MG5/pp_bpbp~_dzu~w+ # for atlas_1503_03290, cms_1502_0631
 #mg5dir=../MG5/pp_bpbp~_all_test
-mg5dir=../MG5/pp_bpbp~_all
+#mg5dir=../MG5/pp_bpbp~_all
+#mg5dir=../MG5/pp_bpbp~_dzd~z_dlld~vv
+mg5dir=../MG5/pp_bpbp~_dzd~z
 
 runext=100k
 mg5_mode=1 # 0:don't generate events, 1:generate events
 nevents=100000
 
 #results_dir=results_local
-results_dir=results_local_brz2
+#results_dir=results_local_brz2
+results_dir=results_local_brz4
 
-MBmin=400
-MBmax=400
+MBmin=800
+MBmax=800
 dMB=20
 
-BRZ=0.01
+BRZ=1
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
