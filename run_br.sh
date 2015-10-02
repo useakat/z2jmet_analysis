@@ -1,7 +1,9 @@
 #!/bin/bash
 
 ########### Inputs #########################################
-BRZ=$1
+MBmin=$1
+BRZ=$2
+mg5_mode=$3 # 0:don't generate events, 1:generate events
 ########### Parameters #########################################
 analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 #analysis=cms_1502_06031 # 2lepton jets MET
@@ -15,23 +17,29 @@ analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 exp=atlas # This is not used yet (under construction)
 #exp=cms # This is not used yet (under construction)
 
-mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
-mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
-mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
+#mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
+#mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
+#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
+mg5dir_zz=../MG5/pp_bpbp~_dzd~z
+mg5dir_zw=../MG5/pp_bpbp~_dzuw
+mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
 
-mg5_mode=0 # 0:don't generate events, 1:generate events
-runext=10k
-nevents=10000
+runext=100k
+nevents=100000
 
-results_dir=results_local_brz3
+#results_dir=results_local_brz3
+results_dir=results_local_brz4
 
-MBmin=600
+#MBmin=600
 MBmax=$MBmin
 dMB=20
 
-BRzll=0.06729
-BRzvv=0.2
-BRwlv=0.216
+#BRzll=0.06729
+#BRzvv=0.2
+#BRwlv=0.216
+BRzll=1
+BRzvv=1
+BRwlv=1
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
@@ -70,8 +78,8 @@ while [ $MB -le $MBmax ];do
     s95=${ss_zz2[2]}
 
     # Combine results for overall event numbers passing the analysis cuts
-    ss=`echo "scale=5; $ss_zz*$BRZ^2*$BRzll*$BRzvv +$ss_zw*$BRZ*$BRW*$BRzll*$BRwlv +$ss_ww*$BRW^2*$BRwlv^2" | bc | sed 's/^\./0./'`
-    dss=`echo "scale=5; sqrt($dss_zz^2*$BRZ^4*$BRzll^2*$BRzvv^2 +$dss_zw^2*$BRZ^2*$BRW^2*$BRzll^2*$BRwlv^2 +$dss_ww^2*$BRW^4*$BRwlv^4)" | bc | sed 's/^\./0./'`
+    ss=`echo "scale=5; 2*$ss_zz*$BRZ^2*$BRzll*$BRzvv +2*$ss_zw*$BRZ*$BRW*$BRzll*$BRwlv +$ss_ww*$BRW^2*$BRwlv^2" | bc | sed 's/^\./0./'`
+    dss=`echo "scale=5; sqrt(2*$dss_zz^2*$BRZ^4*$BRzll^2*$BRzvv^2 +2*$dss_zw^2*$BRZ^2*$BRW^2*$BRzll^2*$BRwlv^2 +$dss_ww^2*$BRW^4*$BRwlv^4)" | bc | sed 's/^\./0./'`
     echo $MB $ss >> s.dat
     echo $MB $ss $dss $s95
 
