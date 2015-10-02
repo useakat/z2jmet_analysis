@@ -10,11 +10,9 @@ mode=$7
 results_dir=$8
 
 cd $mg5dir
-sed	-e "s/.* = nevents !/$nevents = nevents !/" ./Cards/run_card.dat > ./Cards/run_card.tmp
-mv ./Cards/run_card.tmp ./Cards/run_card.dat
+sed -e "s/.* = nevents !/$nevents = nevents !/" ./Cards/run_card.def > ./Cards/run_card.dat
 sed -e "s/.* # MBP/  6000007 $MB # MBP/" \
-    -e "s/DECAY 6000007 .*/DECAY 6000007 Auto/" ./Cards/param_card.dat > ./Cards/param_card.tmp
-mv ./Cards/param_card.tmp ./Cards/param_card.dat       
+    -e "s/DECAY 6000007 .*/DECAY 6000007 Auto/" ./Cards/param_card.def > ./Cards/param_card.dat
 if [ 1 -eq 1 ];then
     if [ -e Events/$run_name ];then
 	rm -rf Events/$run_name

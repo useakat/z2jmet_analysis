@@ -37,9 +37,15 @@ dMB=20
 #BRzll=0.06729
 #BRzvv=0.2
 #BRwlv=0.216
+#zzfact=2
+#zwfact=2
+#wwfact=1
 BRzll=1
 BRzvv=1
 BRwlv=1
+zzfact=1
+zwfact=2
+wwfact=1
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
@@ -60,8 +66,8 @@ while [ $MB -le $MBmax ];do
 	
 	# Event generation and analysis with MG5-Pythia-delphes-CheckMate
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz $nevents zz $results_dir
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir
+#	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir
+#	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir
     fi
 
     # Obtain event numbers passing analysis cuts for each B' decay mode
@@ -78,8 +84,8 @@ while [ $MB -le $MBmax ];do
     s95=${ss_zz2[2]}
 
     # Combine results for overall event numbers passing the analysis cuts
-    ss=`echo "scale=5; 2*$ss_zz*$BRZ^2*$BRzll*$BRzvv +2*$ss_zw*$BRZ*$BRW*$BRzll*$BRwlv +$ss_ww*$BRW^2*$BRwlv^2" | bc | sed 's/^\./0./'`
-    dss=`echo "scale=5; sqrt(2*$dss_zz^2*$BRZ^4*$BRzll^2*$BRzvv^2 +2*$dss_zw^2*$BRZ^2*$BRW^2*$BRzll^2*$BRwlv^2 +$dss_ww^2*$BRW^4*$BRwlv^4)" | bc | sed 's/^\./0./'`
+    ss=`echo "scale=5; $zzfact*$ss_zz*$BRZ^2*$BRzll*$BRzvv +$zwfact*$ss_zw*$BRZ*$BRW*$BRzll*$BRwlv +$wwfact*$ss_ww*$BRW^2*$BRwlv^2" | bc | sed 's/^\./0./'`
+    dss=`echo "scale=5; sqrt($zzfact*$dss_zz^2*$BRZ^4*$BRzll^2*$BRzvv^2 +$zwfact*$dss_zw^2*$BRZ^2*$BRW^2*$BRzll^2*$BRwlv^2 +$wwfact*$dss_ww^2*$BRW^4*$BRwlv^4)" | bc | sed 's/^\./0./'`
     echo $MB $ss >> s.dat
     echo $MB $ss $dss $s95
 
