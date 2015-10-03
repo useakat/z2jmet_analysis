@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-  double mt = 800;
+  double mt = 400;
   double mur,muf;
   mur = mt;
   muf = mt;
