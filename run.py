@@ -1,4 +1,4 @@
-#!/Users/yoshi/.pyenv/shims/python
+#! /usr/bin/env python
 import sys,os
 from subprocess import check_call
 
