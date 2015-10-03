@@ -26,8 +26,8 @@ mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
 #mg5dir_zw=../MG5/pp_bpbp~_dzuw
 #mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
 
-runext=100k
-nevents=100000
+runext=10k
+nevents=10000
 
 results_dir=results_local_brz3
 #results_dir=results_local_brz4
@@ -81,9 +81,9 @@ while [ $MB -le $MBmax ];do
 	
         # Event analysis with Delphes-CheckMate
 	echo "Performing detector simulation with Delphes and analysing events with Checkmate..."
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz zz $results_dir
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw zw $results_dir
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww ww $results_dir
+	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz zz $results_dir $runext
+	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw zw $results_dir $runext
+	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww ww $results_dir $runext
     fi
 
     echo "Obtaining final results..."
