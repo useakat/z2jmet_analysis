@@ -5,8 +5,8 @@ MBmin=$1
 BRZ=$2
 mg5_mode=$3 # 0:don't generate events, 1:generate events
 ########### Parameters #########################################
-analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
-#analysis=cms_1502_06031 # 2lepton jets MET
+#analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
+analysis=cms_1502_06031 # 2lepton jets MET
 #analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
 #analysis=atlas_conf_2013_047 # 2-6 jets +MET
 #analysis=atlas_conf_2013_089 # 2leptons +MET no sensitivity
@@ -14,38 +14,38 @@ analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 #analysis=atlas_1407_0583 # no sensitivity
 #analysis=atlas_conf_2013_049 # no sensitivity due to jet veto
 
-exp=atlas # This is not used yet (under construction)
-#exp=cms # This is not used yet (under construction)
+#exp=atlas # This is not used yet (under construction)
+exp=cms # This is not used yet (under construction)
 
-#mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
-#mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
-#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
-mg5dir_zz=../MG5/pp_bpbp~_dzd~z
-mg5dir_zw=../MG5/pp_bpbp~_dzuw
-mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
+mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
+mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
+mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
+#mg5dir_zz=../MG5/pp_bpbp~_dzd~z
+#mg5dir_zw=../MG5/pp_bpbp~_dzuw
+#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
 
 runext=100k
 nevents=100000
 
-#results_dir=results_local_brz3
-results_dir=results_local_brz4
+results_dir=results_local_brz3
+#results_dir=results_local_brz4
 
 #MBmin=600
 MBmax=$MBmin
 dMB=20
 
-#BRzll=0.06729
-#BRzvv=0.2
-#BRwlv=0.216
-#zzfact=2
-#zwfact=2
-#wwfact=1
-BRzll=1
-BRzvv=1
-BRwlv=1
-zzfact=1
+BRzll=0.06729
+BRzvv=0.2
+BRwlv=0.216
+zzfact=2
 zwfact=2
 wwfact=1
+# BRzll=1
+# BRzvv=1
+# BRwlv=1
+# zzfact=1
+# zwfact=2
+# wwfact=1
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
@@ -66,8 +66,8 @@ while [ $MB -le $MBmax ];do
 	
 	# Event generation and analysis with MG5-Pythia-delphes-CheckMate
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz $nevents zz $results_dir
-#	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir
-#	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir
+	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir
+	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir
     fi
 
     # Obtain event numbers passing analysis cuts for each B' decay mode
