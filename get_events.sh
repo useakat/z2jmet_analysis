@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mg5_dir=$1
+mg5dir=$1
 run_name=$2
 nevents=$3
 MB=$4

@@ -64,9 +64,9 @@ while [ $MB -le $MBmax ];do
         # Event generation with MG5-Pythia
 	echo "Generating and showering events with MG5-pythia..."
 	echo
-	./get_events.sh $mg5_dir_zz $run_name $nevents $MB
-	./get_events.sh $mg5_dir_zw $run_name $nevents $MB
-	./get_events.sh $mg5_dir_ww $run_name $nevents $MB
+	./get_events.sh $mg5dir_zz $run_name $nevents $MB
+	./get_events.sh $mg5dir_zw $run_name $nevents $MB
+	./get_events.sh $mg5dir_ww $run_name $nevents $MB
     fi
 
     if [ $run_mode -ge 1 ];then    
@@ -77,10 +77,10 @@ while [ $MB -le $MBmax ];do
 	mv myprogram.tmp myprogram.cxx
 	make myprogram
 	./myprogram | tee hathor.log    
+	echo ""
 	
         # Event analysis with Delphes-CheckMate
 	echo "Performing detector simulation with Delphes and analysing events with Checkmate..."
-	echo
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz zz $results_dir
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw zw $results_dir
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww ww $results_dir
