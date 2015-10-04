@@ -25,3 +25,4 @@ else
 fi
 mv $CHECKMATE/results/output $analysis_dir/$mode
 rm -rf $analysis_dir/$mode/delphes
+mv s_$mode.dat $analysis_dir/.

@@ -26,8 +26,8 @@ mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
 #mg5dir_zw=../MG5/pp_bpbp~_dzuw
 #mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
 
-runext=10k
-nevents=10000
+runext=100k
+nevents=100000
 
 results_dir=results_local_brz3
 #results_dir=results_local_brz4
@@ -95,21 +95,21 @@ while [ $MB -le $MBmax ];do
     dss=${results[2]}
     s95=${results[3]}
 
-#     ss_zz2=(`cat $results_dir/${analysis}_${MB}/s_zz.dat`)
-#     ss_zw2=(`cat $results_dir/${analysis}_${MB}/s_zw.dat`)
-#     ss_ww2=(`cat $results_dir/${analysis}_${MB}/s_ww.dat`)
+#      ss_zz2=(`cat $results_dir/${analysis}_${runext}_${MB}/s_zz.dat`)
+#      ss_zw2=(`cat $results_dir/${analysis}_${runext}_${MB}/s_zw.dat`)
+#      ss_ww2=(`cat $results_dir/${analysis}_${runext}_${MB}/s_ww.dat`)
 
-#     ss_zz=${ss_zz2[0]}
-#     dss_zz=${ss_zz2[1]}
-#     ss_zw=${ss_zw2[0]}
-#     dss_zw=${ss_zw2[1]}
-#     ss_ww=${ss_ww2[0]}
-#     dss_ww=${ss_ww2[1]}
-#     s95=${ss_zz2[2]}
+#      ss_zz=${ss_zz2[0]}
+#      dss_zz=${ss_zz2[1]}
+#      ss_zw=${ss_zw2[0]}
+#      dss_zw=${ss_zw2[1]}
+#      ss_ww=${ss_ww2[0]}
+#      dss_ww=${ss_ww2[1]}
+#      s95=${ss_zz2[2]}
 
-#     # Combine results for overall event numbers passing the analysis cuts
-#     ss=`echo "scale=5; $zzfact*$ss_zz*$BRZ^2*$BRzll*$BRzvv +$zwfact*$ss_zw*$BRZ*$BRW*$BRzll*$BRwlv +$wwfact*$ss_ww*$BRW^2*$BRwlv^2" | bc | sed 's/^\./0./'`
-#     dss=`echo "scale=5; sqrt($zzfact*$dss_zz^2*$BRZ^4*$BRzll^2*$BRzvv^2 +$zwfact*$dss_zw^2*$BRZ^2*$BRW^2*$BRzll^2*$BRwlv^2 +$wwfact*$dss_ww^2*$BRW^4*$BRwlv^4)" | bc | sed 's/^\./0./'`
+#      # Combine results for overall event numbers passing the analysis cuts
+#      ss=`echo "scale=5; $zzfact*$ss_zz*$BRZ^2*$BRzll*$BRzvv +$zwfact*$ss_zw*$BRZ*$BRW*$BRzll*$BRwlv +$wwfact*$ss_ww*$BRW^2*$BRwlv^2" | bc | sed 's/^\./0./'`
+#      dss=`echo "scale=5; sqrt($zzfact*$dss_zz^2*$BRZ^4*$BRzll^2*$BRzvv^2 +$zwfact*$dss_zw^2*$BRZ^2*$BRW^2*$BRzll^2*$BRwlv^2 +$wwfact*$dss_ww^2*$BRW^4*$BRwlv^4)" | bc | sed 's/^\./0./'`
 
     echo $MB $ss >> s.dat
     echo $MB $ss $dss $s95
