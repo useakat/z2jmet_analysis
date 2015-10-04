@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[    191956,       4344]
-NotebookOptionsPosition[    191079,       4310]
-NotebookOutlinePosition[    191440,       4326]
-CellTagsIndexPosition[    191397,       4323]
+NotebookDataLength[    191947,       4339]
+NotebookOptionsPosition[    191073,       4305]
+NotebookOutlinePosition[    191431,       4321]
+CellTagsIndexPosition[    191388,       4318]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -446,7 +446,7 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{"400", ",", "0.468"}], "}"}], ",", 
+        RowBox[{"400", ",", "0.465"}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"500", ",", "0.666"}], "}"}], ",", 
        RowBox[{"{", 
@@ -454,15 +454,14 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"700", ",", "2"}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"800", ",", "2"}], "}"}]}], "}"}]}], ";"}], " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+        RowBox[{"800", ",", "2"}], "}"}]}], "}"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
     RowBox[{"limitlowerbrz2", "=", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{"400", ",", "0.146"}], "}"}], ",", 
+        RowBox[{"400", ",", "0.143"}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"500", ",", "0.252"}], "}"}], ",", 
        RowBox[{"{", 
@@ -470,11 +469,10 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"700", ",", "0.823"}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"800", ",", "1.55"}], "}"}]}], "}"}]}], " ", ";"}], 
-   RowBox[{"(*", " ", 
-    RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{
+        RowBox[{"800", ",", "1.55"}], "}"}]}], "}"}]}], " ", ";", 
+    RowBox[{"(*", " ", 
+     RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
     RowBox[{"plimit", "=", 
      RowBox[{"ListPlot", "[", 
       RowBox[{
@@ -878,10 +876,9 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"600", ",", "0.26"}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"685", ",", "1"}], "}"}]}], "}"}]}], ";"}], " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+        RowBox[{"685", ",", "1"}], "}"}]}], "}"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
     RowBox[{"plimitbrz2", "=", 
      RowBox[{"ListPlot", "[", 
       RowBox[{"limit", ",", 
@@ -1283,10 +1280,9 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"600", ",", "0.545"}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"687", ",", "1"}], "}"}]}], "}"}]}], ";"}], " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+        RowBox[{"687", ",", "1"}], "}"}]}], "}"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
     RowBox[{"plimitbrz4", "=", 
      RowBox[{"ListPlot", "[", 
       RowBox[{"limit4", ",", 
@@ -1604,17 +1600,16 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"700", ",", "0.93"}], "}"}], ",", 
        RowBox[{"{", 
-        RowBox[{"715", ",", "1"}], "}"}]}], "}"}]}], ";"}], " ", 
-   RowBox[{"(*", " ", 
-    RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
+        RowBox[{"715", ",", "1"}], "}"}]}], "}"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"100", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
      RowBox[{
-     "optimized", " ", "event", " ", "generation", " ", "for", " ", "z", " ", 
-      "on"}], "-", 
-     RowBox[{"shell", " ", "2", "lepton"}], " ", "+", "jets", " ", "+", 
-     "MET"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
+      RowBox[{
+      "optimized", " ", "event", " ", "generation", " ", "for", " ", "z", " ",
+        "on"}], "-", 
+      RowBox[{"shell", " ", "2", "lepton"}], " ", "+", "jets", " ", "+", 
+      "MET"}], " ", "*)"}], "\[IndentingNewLine]", 
     RowBox[{"limit2", "=", 
      RowBox[{"{", 
       RowBox[{
@@ -1900,7 +1895,7 @@ miss} searches, respectively.\>\"", "]"}], " "}]}]], "Input",
    3.6527894878353863`*^9, 3.652789489291109*^9}, {3.652789539694055*^9, 
    3.6527895421401443`*^9}, {3.652796602899715*^9, 3.652796604446671*^9}, {
    3.652828709799391*^9, 3.6528287778142643`*^9}, {3.652828812128654*^9, 
-   3.652828858773616*^9}}],
+   3.652828858773616*^9}, {3.652911831374785*^9, 3.652911833265999*^9}}],
 
 Cell[BoxData[
  FormBox[
@@ -4309,7 +4304,7 @@ miss} searches, respectively.\"\>", TraditionalForm]], "Print",
 }, Open  ]]
 },
 WindowSize->{1031, 703},
-WindowMargins->{{Automatic, -201}, {Automatic, 0}},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
 11, 2014)",
 StyleDefinitions->"Default.nb"
@@ -4329,14 +4324,14 @@ Cell[CellGroupData[{
 Cell[422, 15, 176, 2, 64, "Section"],
 Cell[601, 19, 388, 10, 46, "Input"],
 Cell[CellGroupData[{
-Cell[1014, 33, 72513, 1869, 2903, "Input"],
-Cell[73530, 1904, 69777, 1409, 285, "Output"],
-Cell[143310, 3315, 22632, 467, 285, "Output"],
-Cell[165945, 3784, 22693, 468, 285, "Output"],
-Cell[188641, 4254, 657, 14, 24, "Message"],
-Cell[189301, 4270, 671, 14, 24, "Message"],
-Cell[189975, 4286, 523, 10, 67, "Message"],
-Cell[190501, 4298, 550, 8, 36, "Print"]
+Cell[1014, 33, 72507, 1864, 2903, "Input"],
+Cell[73524, 1899, 69777, 1409, 285, "Output"],
+Cell[143304, 3310, 22632, 467, 285, "Output"],
+Cell[165939, 3779, 22693, 468, 285, "Output"],
+Cell[188635, 4249, 657, 14, 24, "Message"],
+Cell[189295, 4265, 671, 14, 24, "Message"],
+Cell[189969, 4281, 523, 10, 67, "Message"],
+Cell[190495, 4293, 550, 8, 36, "Print"]
 }, Open  ]]
 }, Open  ]]
 }
