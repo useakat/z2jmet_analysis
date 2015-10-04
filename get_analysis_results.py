@@ -107,10 +107,11 @@ for i in xrange(ncol):
         ds_max = dss
         ds_max2 = dss2
         s95obs_max = S95obs[i]
+        rmax = r
 
-        r_max = (s_max -2*ds_max)/float(S95obs[i])
+        rr_max = (s_max -2*ds_max)/float(S95obs[i])
 
 #print "SR", "S", "dS_stat", "dS_sys", "dS_tot", "S95obs", "r"
-print sr_max, s_max, dsstat_max, dssys_max, ds_max, s95obs_max, r_max
+print sr_max, s_max, dsstat_max, dssys_max, ds_max, s95obs_max, rr_max
 #print ds_max, ds_max2
 
