@@ -13,7 +13,7 @@ BRW = float(sys.argv[8])
 BRzll = float(sys.argv[9])
 BRzvv = float(sys.argv[10])
 BRwlv = float(sys.argv[11])
-runext = sys.argv[12]
+anaext = sys.argv[12]
 
 S_zz = []
 dS_zz = []
@@ -31,9 +31,9 @@ SR = []
 S95obs = []
 S95exp = []
 
-file_zz = results_dir + "/" + analysis + "_" + runext + "_" + mass + "/zz/evaluation/" + analysis + "_r_limits.txt"
-file_zw = results_dir + "/" + analysis + "_" + runext + "_" + mass + "/zw/evaluation/" + analysis + "_r_limits.txt"
-file_ww = results_dir + "/" + analysis + "_" + runext + "_" + mass + "/ww/evaluation/" + analysis + "_r_limits.txt"
+file_zz = results_dir + "/" + analysis + "_" + anaext + "_" + mass + "/zz/evaluation/" + analysis + "_r_limits.txt"
+file_zw = results_dir + "/" + analysis + "_" + anaext + "_" + mass + "/zw/evaluation/" + analysis + "_r_limits.txt"
+file_ww = results_dir + "/" + analysis + "_" + anaext + "_" + mass + "/ww/evaluation/" + analysis + "_r_limits.txt"
 
 ld = open(file_zz)
 lines = ld.readlines()

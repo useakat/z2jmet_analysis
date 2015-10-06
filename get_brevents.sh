@@ -7,7 +7,7 @@ MB=$4
 mg5dir=$5
 mode=$6
 results_dir=$7
-runext=$8
+anaext=$8
 
 # Checkmate analysis
 python run.py $run_name $analysis $MB $mg5dir | while read i; do python CheckMATE $i; done
@@ -17,7 +17,7 @@ echo $ss > s_$mode.dat
 rm -rf s.tmp
 
 # Store analysis results in results_local
-analysis_dir=$results_dir/${analysis}_${runext}_$MB
+analysis_dir=$results_dir/${analysis}_${anaext}_${MB}
 if [ -e $analysis_dir ];then
     rm -rf $analysis_dir/$mode
 else
