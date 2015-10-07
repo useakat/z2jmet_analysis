@@ -106,9 +106,12 @@ while [ $MB -le $MBmax ];do
     ds=${results[4]}
     s95=${results[5]}
     r=${results[6]}
+    rsys=${results[7]}
+    rtot=${results[8]}
 
     echo $MB $ss >> s.dat
-    echo $MB $s $dsstat $dssys $ds $s95 $r
+    echo "mass", "S", "     dS_stat", "     dS_sys", " dS_tot", "     S95obs", "r_noerr", "    r_syserr", "    r_toterr"
+    echo $MB $s $dsstat $dssys $ds $s95 $r $rsys $rtot
     echo ""
 
     MB=`expr $MB + $dMB`
