@@ -1,40 +1,40 @@
 #!/bin/bash
 
 ########### Parameters #########################################
-analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
-#analysis=cms_1502_06031 # 2lepton jets MET
+#analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
+analysis=cms_1502_06031 # 2lepton jets MET
 #analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
 #analysis=atlas_conf_2013_047 # 2-6 jets +MET
 #analysis=atlas_conf_2013_089 # 2leptons +MET no sensitivity
 #analysis=atlas_1403_4853 # 2lepton jets MET (Stop search) no sensitivity
 #analysis=atlas_1407_0583 # no sensitivity
 #analysis=atlas_conf_2013_049 # no sensitivity due to jet veto
-exp=atlas # This is not used yet (under construction)
-#exp=cms # This is not used yet (under construction)
+#exp=atlas # This is not used yet (under construction)
+exp=cms # This is not used yet (under construction)
 
 #mg5dir=../MG5/pp_bpbp~_dzld~zv # for atlas_1503_03290, cms_1502_0631, atlas_1403_4853
 #mg5dir=../MG5/pp_bpbp~_dzd~z # for atlas_1503_03290, cms_1502_0631
 #mg5dir=../MG5/pp_bpbp~_uw-u~w+ # for atlas_1503_03290, cms_1502_0631
 #mg5dir=../MG5/pp_bpbp~_dzu~w+ # for atlas_1503_03290, cms_1502_0631
 #mg5dir=../MG5/pp_bpbp~_all_test
-#mg5dir=../MG5/pp_bpbp~_all
+mg5dir=../MG5/pp_bpbp~_all
 #mg5dir=../MG5/pp_bpbp~_dzd~z_dlld~vv
-mg5dir=../MG5/pp_bpbp~_dzd~z
+#mg5dir=../MG5/pp_bpbp~_dzd~z
 
-runext=100k
+runext=100kall
 mg5_mode=1 # 0:don't generate events, 1:generate events
 nevents=100000
 
 #results_dir=results_local
 #results_dir=results_local_brz2
-#results_dir=results_local_brz4
-results_dir=results_local_brz5
+results_dir=results_local_brz4
+#results_dir=results_local_brz5
 
-MBmin=600
-MBmax=600
+MBmin=700
+MBmax=700
 dMB=20
 
-BRZ=1
+BRZ=0.914
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
