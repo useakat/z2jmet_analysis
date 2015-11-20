@@ -22,7 +22,7 @@ mg5dir=../MG5/pp_bpbp~_all
 #mg5dir=../MG5/pp_bpbp~_dzd~z
 
 runext=100kall
-mg5_mode=1 # 0:don't generate events, 1:generate events
+mg5_mode=0 # 0:don't generate events, 1:generate events
 nevents=100000
 
 #results_dir=results_local
