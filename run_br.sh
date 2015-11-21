@@ -4,10 +4,11 @@
 MBmin=$1
 BRZ=$2
 mg5_mode=$3 # 0:don't generate events, 1:generate events
+checkmate_mode=$4 # 0:don't generate events, 1:generate events
 ########### Parameters #########################################
-analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
+#analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 #analysis=cms_1502_06031 # 2lepton jets MET
-#analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
+analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
 #analysis=atlas_conf_2013_047 # 2-6 jets +MET
 #analysis=atlas_conf_2013_089 # 2leptons +MET no sensitivity
 #analysis=atlas_1403_4853 # 2lepton jets MET (Stop search) no sensitivity
@@ -24,11 +25,12 @@ mg5dir_zz=../MG5/pp_bpbp~_dzd~z
 mg5dir_zw=../MG5/pp_bpbp~_dzuw
 mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
 
-runext=100k
-nevents=100000
+runext=10k
+nevents=10000
 
 #results_dir=results_local_brz3
-results_dir=results_local_brz4
+#results_dir=results_local_brz4
+results_dir=results_local_test
 
 #MBmin=600
 MBmax=$MBmin
@@ -37,12 +39,13 @@ dMB=20
 #BRzll=0.06729
 #BRzvv=0.2
 #BRwlv=0.216
-BRzll=1
-BRzvv=1
-BRwlv=1
+BRzll=1  # for pp_bpbp~_dzd~z
+BRzvv=1  # for pp_bpbp~_dzuw
+BRwlv=1  # for pp_bpbp~_uw-u~w+
 ################## Main Program ##################################
 rm -rf s.dat
 touch s.dat
+hathor_mode=$mg5_mode
 
 i=1
 MB=$MBmin
@@ -51,18 +54,18 @@ while [ $MB -le $MBmax ];do
 
     BRW=`echo "scale=5; 1 -$BRZ" | bc | sed 's/^\./0./'`
 
-    if [ $mg5_mode -eq 1 ];then
+    if [ $hathor_mode -eq 1 ];then
         # Hathor NNLO cross section calculation
 	sed -e "s/double mt = .*/double mt = $MB;/" myprogram.cxx > myprogram.tmp
 	mv myprogram.tmp myprogram.cxx
 	make myprogram
 	./myprogram | tee hathor.log    
-	
-	# Event generation and analysis with MG5-Pythia-delphes-CheckMate
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz $nevents zz $results_dir
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir
-	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir
     fi
+	
+    # Event generation and analysis with MG5-Pythia-delphes-CheckMate
+    ./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz $nevents zz $results_dir $mg5_mode $checkmate_mode
+    ./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir $mg5_mode $checkmate_mode
+    ./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir $mg5_mode $checkmate_mode
 
     # Obtain event numbers passing analysis cuts for each B' decay mode
     ss_zz2=(`cat $results_dir/${analysis}_${MB}/s_zz.dat`)

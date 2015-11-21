@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ########### Parameters #########################################
-analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
+#analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 #analysis=cms_1502_06031 # 2lepton jets MET
-#analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
+analysis=atlas_1405_7875 # ATLAS 2-6 jet +MET
 #analysis=atlas_conf_2013_047 # 2-6 jets +MET
 #analysis=atlas_conf_2013_089 # 2leptons +MET no sensitivity
 #analysis=atlas_1403_4853 # 2lepton jets MET (Stop search) no sensitivity

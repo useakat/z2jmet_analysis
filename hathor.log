@@ -1,16 +1,3 @@
- FF: ====================================================
- FF:   FF 2.0, a package to evaluate one-loop integrals
- FF: written by G. J. van Oldenborgh, NIKHEF-H, Amsterdam
- FF: ====================================================
- FF: for the algorithms used see preprint NIKHEF-H 89/17,
- FF: New Algorithms for One-loop Integrals, by G.J. van
- FF: Oldenborgh and J.A.M. Vermaseren, published in 
- FF: Zeitschrift fuer Physik C46(1990)425.
- FF: ====================================================
- FF: ffini: precx = .177635683940025E-14
- FF: ffini: precc = .177635683940025E-14
- FF: ffini: xalogm = .100000000000000-299
- FF: ffini: xclogm = .100000000000000-299
 LHAPDF 6.1.5 loading all 41 PDFs in set MSTW2008nlo68cl
 MSTW2008nlo68cl, version 2; 41 PDF members
  HATHOR: Dear user,
@@ -60,4 +47,17 @@ MSTW2008nlo68cl, version 2; 41 PDF members
  HATHOR: Collider energy set to [GeV]:  8000
  HATHOR: Precision set to  10000
  HATHOR: Precision set to  1000
-0.0902432 0.0222786 2.41767e-06 0.00146534 -0.00134594 (pdf)
+0.0933074 0.182422 2.04679e-05 0.00969707 -0.00953783 (pdf)
+ FF: ====================================================
+ FF:   FF 2.0, a package to evaluate one-loop integrals
+ FF: written by G. J. van Oldenborgh, NIKHEF-H, Amsterdam
+ FF: ====================================================
+ FF: for the algorithms used see preprint NIKHEF-H 89/17,
+ FF: New Algorithms for One-loop Integrals, by G.J. van
+ FF: Oldenborgh and J.A.M. Vermaseren, published in 
+ FF: Zeitschrift fuer Physik C46(1990)425.
+ FF: ====================================================
+ FF: ffini: precx = .177635683940025E-14
+ FF: ffini: precc = .177635683940025E-14
+ FF: ffini: xalogm = .100000000000000-299
+ FF: ffini: xclogm = .100000000000000-299
