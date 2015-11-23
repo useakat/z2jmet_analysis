@@ -1,2 +1,0 @@
-analysis         bestSR       r_obs^c  r_exp^c  S       dS_stat  dS_sys  dS_tot  S95_obs  S95_exp  
-atlas_1405_7875  SR05_d.6jt+  2.351    2.814    25.081  3.041    1.333   3.321   7.900    6.600    

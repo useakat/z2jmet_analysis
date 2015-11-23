@@ -1,7 +1,0 @@
-
-Test: Calculation of r = signal/(95%CL limit on signal)
-Warning: Error is dominated by Monte Carlo statistics!
-Warning: The model could be excluded if you provided more input events!
-Result: Allowed
-Result for r: r_max = 0.76729
-SR: atlas_1405_7875 - SR05_d.6jt+
