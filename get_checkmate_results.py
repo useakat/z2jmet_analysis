@@ -1,10 +1,10 @@
-#!/Users/yoshi/.pyenv/shims/python
 import sys,os
 
 exp = sys.argv[1]
 
 # extract signal event number
-ld = open("/Users/yoshi/packages/checkmate_v1.2.1/results/output/evaluation/best_signal_regions.txt")
+#ld = open("/Users/yoshi/packages/checkmate_v1.2.1/results/output/evaluation/best_signal_regions.txt")
+ld = open("/home/yoshitar/packages/CheckMATE-1.2.2/results/output/evaluation/best_signal_regions.txt")
 lines = ld.readlines()
 ld.close()
 for line in lines:
