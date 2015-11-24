@@ -1,4 +1,4 @@
-#!/Users/yoshi/.pyenv/shims/python
+#! /usr/bin/env python
 import sys,os
 from subprocess import check_call
 
@@ -32,7 +32,6 @@ else:
 # extract NLO cross section information from Hathor output
 #brz = 2*(0.03363+0.03366)*0.2
 #brz = 0.137 * 0.137
-#brz = (0.03363+0.03366)*0.2
 brz = 1
 ld = open("hathor.log")
 lines = ld.readlines()

@@ -1,4 +1,3 @@
-#!/Users/yoshi/.pyenv/shims/python
 import sys,os
 
 exp = sys.argv[1]
