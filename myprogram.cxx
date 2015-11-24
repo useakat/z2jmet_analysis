@@ -7,7 +7,11 @@
 using namespace std;
 
 int main(){
+<<<<<<< HEAD
   double mt = 650;
+=======
+  double mt = 600;
+>>>>>>> master
   double mur,muf;
   mur = mt;
   muf = mt;

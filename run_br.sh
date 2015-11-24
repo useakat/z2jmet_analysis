@@ -1,11 +1,18 @@
 #!/bin/bash
 
 ########### Inputs #########################################
+<<<<<<< HEAD
 run_mode=$1 # 0: don't generate/analyze events
             # 1: don't generate but analyze events
             # 2: generate and analyze events
 MBmin=$2
 BRZ=$3
+=======
+MBmin=$1
+BRZ=$2
+mg5_mode=$3 # 0:don't generate events, 1:generate events
+checkmate_mode=$4 # 0:don't generate events, 1:generate events
+>>>>>>> master
 ########### Parameters #########################################
 #analysis=atlas_1503_03290 # signal ATLAS 2lepton jets MET
 #analysis=cms_1502_06031 # 2lepton jets MET
@@ -29,6 +36,7 @@ mg5dir_zw=../MG5/pp_bpbp~_dzuw
 mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
 #mg5dir_ww=../MG5/pp_bpbp~_all
 
+<<<<<<< HEAD
 runext=100k
 #analysisext=brz
 #analysisext=brz_2
@@ -40,10 +48,19 @@ nevents=100000
 
 results_dir=results_local_test
 #results_dir=results_local_brz4
+=======
+runext=10k
+nevents=10000
+
+#results_dir=results_local_brz3
+#results_dir=results_local_brz4
+results_dir=results_local_test
+>>>>>>> master
 
 MBmax=$MBmin
 dMB=20
 
+<<<<<<< HEAD
 if [ $analysis == "atlas_1503_03290" -o $analysis == "cms_1502_06031" ];then
     BRzll=0.06729
     BRzvv=0.2
@@ -59,10 +76,19 @@ elif [ $analysis == "atlas_1405_7875" ];then
     zwfact=2
     wwfact=1
 fi
+=======
+#BRzll=0.06729
+#BRzvv=0.2
+#BRwlv=0.216
+BRzll=1  # for pp_bpbp~_dzd~z
+BRzvv=1  # for pp_bpbp~_dzuw
+BRwlv=1  # for pp_bpbp~_uw-u~w+
+>>>>>>> master
 ################## Main Program ##################################
 echo ""
 rm -rf s.dat
 touch s.dat
+hathor_mode=$mg5_mode
 
 anaext=${runext}_${analysisext}
 
@@ -72,6 +98,7 @@ while [ $MB -le $MBmax ];do
     run_name=m_${MB}_${runext}
     BRW=`echo "scale=5; 1 -$BRZ" | bc | sed 's/^\./0./'`
 
+<<<<<<< HEAD
     if [ $run_mode -eq 2 ];then
         # Event generation with MG5-Pythia
 	echo "Generating and showering events with MG5-pythia..."
@@ -82,6 +109,9 @@ while [ $MB -le $MBmax ];do
     fi
 
     if [ $run_mode -ge 1 ];then    
+=======
+    if [ $hathor_mode -eq 1 ];then
+>>>>>>> master
         # Hathor NNLO cross section calculation
 	echo "Calculating NNLO cross section with Hathor..."
 	echo
@@ -89,6 +119,7 @@ while [ $MB -le $MBmax ];do
 	mv myprogram.tmp myprogram.cxx
 	make myprogram
 	./myprogram | tee hathor.log    
+<<<<<<< HEAD
 	echo ""
 	
         # Event analysis with Delphes-CheckMate
@@ -96,7 +127,14 @@ while [ $MB -le $MBmax ];do
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz zz $results_dir $anaext
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw zw $results_dir $anaext
 	./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww ww $results_dir $anaext
+=======
+>>>>>>> master
     fi
+	
+    # Event generation and analysis with MG5-Pythia-delphes-CheckMate
+    ./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zz $nevents zz $results_dir $mg5_mode $checkmate_mode
+    ./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_zw $nevents zw $results_dir $mg5_mode $checkmate_mode
+    ./get_brevents.sh $run_name $analysis $exp $MB $mg5dir_ww $nevents ww $results_dir $mg5_mode $checkmate_mode
 
     echo "Obtaining final results..."
     echo    
