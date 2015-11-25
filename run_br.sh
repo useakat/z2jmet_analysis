@@ -60,6 +60,9 @@ elif [ $analysis == "atlas_1405_7875" ];then
     wwfact=1
 fi
 ################## Main Program ##################################
+start=`date`
+echo $start
+
 echo ""
 rm -rf s.dat
 touch s.dat
@@ -122,4 +125,6 @@ while [ $MB -le $MBmax ];do
     i=`expr $i + 1`
 done
 echo "Finished !"
+echo $start
+echo `date`
 echo
