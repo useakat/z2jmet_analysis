@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-  double mt = 690;
+  double mt = 550;
   double mur,muf;
   mur = mt;
   muf = mt;
@@ -17,7 +17,8 @@ int main(){
   //  unsigned int scheme = Hathor::LO  | Hathor::NLO;
   unsigned int scheme = Hathor::LO | Hathor::NLO | Hathor::NNLO;
   double ecms=8000.;
-  Lhapdf lhapdf("MSTW2008nlo68cl");
+  //  Lhapdf lhapdf("MSTW2008nlo68cl");
+  Lhapdf lhapdf("MSTW2008nnlo68cl");
   Hathor XS(lhapdf);
 
   for(int i=0;i<1;i++){
