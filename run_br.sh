@@ -16,18 +16,8 @@ analysis=cms_1502_06031 # 2lepton jets MET
 #analysis=atlas_1407_0583 # no sensitivity
 #analysis=atlas_conf_2013_049 # no sensitivity due to jet veto
 
-#exp=atlas # This is not used yet (under construction)
-exp=cms # This is not used yet (under construction)
-
-#mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
-#mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
-#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
-#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_all_2
-#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_all3
-#mg5dir_zz=../MG5/pp_bpbp~_dzd~z
-#mg5dir_zw=../MG5/pp_bpbp~_dzuw
-#mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
-#mg5dir_ww=../MG5/pp_bpbp~_all
+#exp=atlas # This is not used yet 
+exp=cms # This is not used yet 
 
 runext=100k
 #analysisext=brz
@@ -35,23 +25,38 @@ runext=100k
 #analysisext=signal
 #analysisext=brz_all
 #analysisext=brz_all_2
-analysisext=test
+#analysisext=test
+analysisext=zwfulldecay
+#analysisext=include-tau
+#analysisext=all
 nevents=100000
 
-results_dir=results_local_test
+results_dir=results_local_$analysisext
 #results_dir=results_local_brz4
 
 MBmax=$MBmin
 dMB=20
 
 if [ $analysis == "atlas_1503_03290" -o $analysis == "cms_1502_06031" ];then
-    mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dlld~vv
-    mg5dir_zw=../MG5/pp_bpbp~_dzuw_dllulv
-    mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulvu~lv
-    BRzll=0.06729
-    BRzvv=0.2
-    BRwlv=0.216
-    zzfact=2
+    # mg5dir_zz=../MG5/pp_bpbp~_dzd~z_dleplepd~vv
+    # mg5dir_zw=../MG5/pp_bpbp~_dzuw_dleplepulepv
+    # mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+_ulepvu~lepv
+    # BRzll=0.10096
+    # BRzvv=0.2
+    # BRwlv=0.3257
+    # zzfact=2
+    # zwfact=2
+    # wwfact=1
+    mg5dir_zz=../MG5/pp_bpbp~_dzd~z
+    mg5dir_zw=../MG5/pp_bpbp~_dzuw
+    mg5dir_ww=../MG5/pp_bpbp~_uw-u~w+
+    # mg5dir_zz=../MG5/pp_bpbp~_dzd~z_all
+    # mg5dir_zw=../MG5/pp_bpbp~_dzuw_all
+    # mg5dir_ww=../MG5/pp_bpbp~_uwuw_all
+    BRzll=1
+    BRzvv=1
+    BRwlv=1
+    zzfact=1
     zwfact=2
     wwfact=1
 elif [ $analysis == "atlas_1405_7875" ];then
@@ -73,6 +78,9 @@ echo ""
 rm -rf s.dat
 touch s.dat
 
+if [ ! -d $results_dir ];then
+    mkdir $results_dir
+fi
 anaext=${runext}_${analysisext}
 
 i=1
@@ -122,7 +130,7 @@ while [ $MB -le $MBmax ];do
     rsys=${results[7]}
     rtot=${results[8]}
 
-    echo $MB $ss >> s.dat
+#    echo $MB $ss >> s.dat
     echo "mass", "S", "     dS_stat", "     dS_sys", " dS_tot", "     S95obs", "r_noerr", "    r_syserr", "    r_toterr"
     echo $MB $s $dsstat $dssys $ds $s95 $r $rsys $rtot
     echo ""

@@ -10,14 +10,14 @@ mode=$6
 results_dir=$7
 anaext=$8
 
-# Checkmate analysis
+############ Checkmate analysis
 python run.py $run_name $analysis $MB $mg5dir | while read i; do python CheckMATE $i; done
 python get_checkmate_results.py $exp
 ss=`cat s.tmp`
 echo $ss > s_$mode.dat
 rm -rf s.tmp
 
-# Store analysis results in results_local
+############ Store analysis results in results_local
 analysis_dir=$results_dir/${analysis}_${anaext}_${MB}
 if [ -e $analysis_dir ];then
     rm -rf $analysis_dir/$mode
@@ -27,3 +27,7 @@ fi
 mv $CHECKMATE/results/output $analysis_dir/$mode
 rm -rf $analysis_dir/$mode/delphes
 mv s_$mode.dat $analysis_dir/.
+cp -rf $selfdir/run_br.sh $analysis_dir/.
+cp -rf $selfdir/myprogram.cxx $analysis_dir/.
+cp -rf $selfdir/get_* $analysis_dir/.
+cp -rf $selfdir/run.py $analysis_dir/.

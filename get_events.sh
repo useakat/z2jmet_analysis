@@ -1,4 +1,5 @@
 #!/bin/bash
+selfdir=$(cd $(dirname $0);pwd)
 
 mg5dir=$1
 run_name=$2
@@ -15,4 +16,4 @@ if [ 1 -eq 1 ];then
     fi
     ./bin/generate_events $run_name -f | tee mg5.log
 fi
-cd ../../analysis
+cd $selfdir
